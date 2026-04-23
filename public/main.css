@@ -33,7 +33,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 70%;
   height: 1259px;
   margin-right: 27px;
   margin-left: 30px;
@@ -134,20 +133,13 @@
   text-transform: capitalize;
 }
 
-/* .main_frame .left_frame .left_3 { */
-
-.Languages {
-  /* Languages */
-  width: 95px;
-  height: 22px;
-  font-family: "Inter";
-  font-size: 18px;
-  font-weight: 500;
-  font-style: Medium;
-  line-height: 123.6%;
-  letter-spacing: 0%;
-  text-align: left;
-  text-transform: capitalize;
+.main_frame .left_frame .left_3 {
+  position: relative;
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 220px;
+  height: auto;
+  margin: 25px auto 0 auto;
 }
 
 .Languages_1 {
@@ -283,15 +275,12 @@
 
 .main_frame .left_frame .left_5 {
   position: relative;
-  width: 186px;
-  height: 148px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  min-height: 100vh;
   margin-top: 25px;
-  margin-left: 45px;
-  background-color: blueviolet;
-}
-
-.midd_frame {
-  background-color: transparent !important;
+  background-color: #f0f0f6;
 }
 
 .hero_section {
@@ -355,7 +344,8 @@
 }
 
 .right_frame {
-  padding-top: 50px;
+  flex: 0 0 80px;
+  background: white;
 }
 
 .side_nav {
