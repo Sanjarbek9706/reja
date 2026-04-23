@@ -373,3 +373,18 @@
   color: #2b2b2b;
   background: #ffb400;
 }
+
+.main_frame .left_frame .left_6 {
+  position: relative;
+  width: 186px;
+  height: 148px;
+  margin-top: 25px;
+  margin-left: 45px;
+}
+
+.left_6 .left_6_extra {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  color: rgb(100, 100, 100);
+}
