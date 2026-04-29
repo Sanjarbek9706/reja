@@ -133,23 +133,23 @@ Callback amallarni NodeJS  backend serverda ahamiyati */
 
 // B- Task
 
-function countDigits(string) {
-  let count = 0;
-  for (
-    let a = 0;
-    a < string.length;
-    a++
-  ) {
-    if (
-      !isNaN(string[a]) &&
-      string[a] !== " "
-    ) {
-      count++;
-    }
-  }
-  return count;
-}
-const natija = countDigits(
-  "saoijfijf438743tgfjn",
-);
-console.log("Raqamlar soni:", natija);
+// function countDigits(string) {
+//   let count = 0;
+//   for (
+//     let a = 0;
+//     a < string.length;
+//     a++
+//   ) {
+//     if (
+//       !isNaN(string[a]) &&
+//       string[a] !== " "
+//     ) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// const natija = countDigits(
+//   "saoijfijf438743tgfjn",
+// );
+// console.log("Raqamlar soni:", natija);

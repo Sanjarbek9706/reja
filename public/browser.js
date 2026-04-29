@@ -1,11 +1,13 @@
+// const { response } = require("../app");
+
 console.log("FrontEnd JS ishga tushdi");
 
-function itemTemplate(data) {
+function itemTemplate(item) {
   return `<li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
-          <span class=" item-text"><%=item.reja%></span>
+          <span class=" item-text">${item.reja}</span>
           <div>
-            <button data-it="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">O'zgartirish</button>
-            <button data-it="<%=item._id%>" class="delete-me  btn btn-danger btn-sm">Delete</button>
+            <button data-it="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">O'zgartirish</button>
+            <button data-it="${item._id}" class="delete-me  btn btn-danger btn-sm">Delete</button>
           </div>
         </li>`;
 }
@@ -35,7 +37,67 @@ document
                 response.data,
               ),
             );
+          createField.value = "";
+          createField.focus();
         })
-        .catch((err) => {});
+        .catch((err) => {
+          console.log(
+            "Iltimos qayta xarakat qiling",
+          );
+        });
     },
   );
+
+document.addEventListener(
+  "click",
+  function (e) {
+    // delete oper
+    console.log(e.target);
+    if (
+      e.target.classList.contains(
+        "delete-me",
+      )
+    ) {
+      alert(
+        "siz delete tugmasini bosdingiz",
+      );
+      console.log({
+        id: e.target.getAttribute(
+          "data-id",
+        ),
+      });
+      if (
+        confirm(
+          "Aniq o'chirmoqchimisiz?",
+        )
+      ) {
+        axios
+          .post("/delete-item", {
+            id: e.target.getAttribute(
+              "data-id",
+            ),
+          })
+          .then((response) => {
+            console.log(response.data);
+            e.target.parentElement.parentElement.remove();
+          })
+          .catch((err) => {
+            console.log(
+              "qayta harakat qiling",
+            );
+          });
+      }
+    }
+
+    //edit oper
+    if (
+      e.target.classList.contains(
+        "edit-me",
+      )
+    ) {
+      alert(
+        "siz edit tugmasini  bostingiz",
+      );
+    }
+  },
+);
