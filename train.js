@@ -153,3 +153,34 @@ Callback amallarni NodeJS  backend serverda ahamiyati */
 //   "saoijfijf438743tgfjn",
 // );
 // console.log("Raqamlar soni:", natija);
+
+//C-TASK
+
+/*Shunday function tuzing, u 2ta string parametr ega bolsin,
+ hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin. 
+ MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true. */
+
+function matnBilanIshlash(str1, str2) {
+  console.log("Sanjarbek og'a:", str1);
+  if (
+    str1
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("") ===
+    str2
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+const natija = matnBilanIshlash(
+  "og'a Sanjarbek",
+  "Sanjarbek og'a",
+);
+console.log("matn bir xilmi", natija);
