@@ -160,27 +160,90 @@ Callback amallarni NodeJS  backend serverda ahamiyati */
  hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin. 
  MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true. */
 
-function matnBilanIshlash(str1, str2) {
-  console.log("Sanjarbek og'a:", str1);
-  if (
-    str1
-      .toLowerCase()
-      .split("")
-      .sort()
-      .join("") ===
-    str2
-      .toLowerCase()
-      .split("")
-      .sort()
-      .join("")
+// function matnBilanIshlash(str1, str2) {
+//   console.log("Sanjarbek og'a:", str1);
+//   if (
+//     str1
+//       .toLowerCase()
+//       .split("")
+//       .sort()
+//       .join("") ===
+//     str2
+//       .toLowerCase()
+//       .split("")
+//       .sort()
+//       .join("")
+//   ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// const natija = matnBilanIshlash(
+//   "og'a Sanjarbek",
+//   "Sanjarbek og'a",
+// );
+// console.log("matn bir xilmi", natija);
+
+class Shop {
+  constructor(
+    telifon,
+    kampyuter,
+    smart_achki,
   ) {
-    return true;
-  } else {
-    return false;
+    this.products = {
+      telifon: telifon,
+      kampyuter: kampyuter,
+      smart_achki: smart_achki,
+    };
+  }
+  _getTime() {
+    const date = new Date();
+    return date
+      .toTimeString()
+      .slice(0, 5);
+  }
+  sotish(mahsulot, miqdor) {
+    if (
+      this.products[mahsulot] >= miqdor
+    ) {
+      this.products[mahsulot] -= miqdor;
+      console.log(
+        `Hozir ${this._getTime()}da ${miqdor}ta ${mahsulot} sotildi(';')`,
+      );
+    } else {
+      console.log(
+        `Hozir${this._getTime()}da ${mahsulot}dan yetarli miqdorda mavjud emas!`,
+      );
+    }
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this._getTime()}da 
+      ${this.products.telifon}ta telifon, 
+      ${this.products.kampyuter}ta kampyuter va 
+      ${this.products.smart_achki}ta smart_achki mavjud!`,
+    );
+  }
+  qabul(mahsulot, miqdor) {
+    this.products[mahsulot] += miqdor;
+    console.log(
+      `Hozir 
+      ${this._getTime()}da 
+      ${miqdor}ta 
+      ${mahsulot} qabul bo'ldi!`,
+    );
   }
 }
-const natija = matnBilanIshlash(
-  "og'a Sanjarbek",
-  "Sanjarbek og'a",
-);
-console.log("matn bir xilmi", natija);
+
+const shop = new Shop(8, 7, 4);
+shop.qoldiq();
+shop.sotish("smart_achki", 20);
+shop.sotish("telifon", 20);
+shop.sotish("kampyuter", 25);
+shop.qabul("kampyuter", 6);
+shop.qabul("smart_achki", 5);
+shop.qabul("telifon", 9);
+
+shop.qoldiq();
