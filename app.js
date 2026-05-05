@@ -8,15 +8,16 @@ const db = require("./server").db();
 const mongodb = require("mongodb");
 
 //1: Kirish code
-app.use(express.static("public"));
-app.use(express.json());
+app.use(express.static("public")); //Midleware Decorator
+app.use(express.json()); //Midleware Decorator, Rest API
 app.use(
   express.urlencoded({
     extended: true,
   }),
-);
+); //Midleware Decorator, Traditional API
 
 //2 Session code
+//login qismida  ishlatiladi
 
 //3: Views code
 app.set("views", "views");

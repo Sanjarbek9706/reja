@@ -185,65 +185,93 @@ Callback amallarni NodeJS  backend serverda ahamiyati */
 // );
 // console.log("matn bir xilmi", natija);
 
-class Shop {
-  constructor(
-    telifon,
-    kampyuter,
-    smart_achki,
-  ) {
-    this.products = {
-      telifon: telifon,
-      kampyuter: kampyuter,
-      smart_achki: smart_achki,
-    };
-  }
-  _getTime() {
-    const date = new Date();
-    return date
-      .toTimeString()
-      .slice(0, 5);
-  }
-  sotish(mahsulot, miqdor) {
-    if (
-      this.products[mahsulot] >= miqdor
-    ) {
-      this.products[mahsulot] -= miqdor;
-      console.log(
-        `Hozir ${this._getTime()}da ${miqdor}ta ${mahsulot} sotildi(';')`,
-      );
-    } else {
-      console.log(
-        `Hozir${this._getTime()}da ${mahsulot}dan yetarli miqdorda mavjud emas!`,
-      );
-    }
-  }
+/*D-TASK
 
-  qoldiq() {
-    console.log(
-      `Hozir ${this._getTime()}da 
-      ${this.products.telifon}ta telifon, 
-      ${this.products.kampyuter}ta kampyuter va 
-      ${this.products.smart_achki}ta smart_achki mavjud!`,
-    );
-  }
-  qabul(mahsulot, miqdor) {
-    this.products[mahsulot] += miqdor;
-    console.log(
-      `Hozir 
-      ${this._getTime()}da 
-      ${miqdor}ta 
-      ${mahsulot} qabul bo'ldi!`,
-    );
-  }
+Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, 
+biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin. 
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() 
+return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() 
+return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud */
+
+// class Shop {
+//   constructor(
+//     telifon,
+//     kampyuter,
+//     smart_achki,
+//   ) {
+//     this.products = {
+//       telifon: telifon,
+//       kampyuter: kampyuter,
+//       smart_achki: smart_achki,
+//     };
+//   }
+//   _getTime() {
+//     const date = new Date();
+//     return date
+//       .toTimeString()
+//       .slice(0, 5);
+//   }
+//   sotish(mahsulot, miqdor) {
+//     if (
+//       this.products[mahsulot] >= miqdor
+//     ) {
+//       this.products[mahsulot] -= miqdor;
+//       console.log(
+//         `Hozir ${this._getTime()}da ${miqdor}ta ${mahsulot} sotildi(';')`,
+//       );
+//     } else {
+//       console.log(
+//         `Hozir${this._getTime()}da ${mahsulot}dan yetarli miqdorda mavjud emas!`,
+//       );
+//     }
+//   }
+
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this._getTime()}da
+//       ${this.products.telifon}ta telifon,
+//       ${this.products.kampyuter}ta kampyuter va
+//       ${this.products.smart_achki}ta smart_achki mavjud!`,
+//     );
+//   }
+//   qabul(mahsulot, miqdor) {
+//     this.products[mahsulot] += miqdor;
+//     console.log(
+//       `Hozir
+//       ${this._getTime()}da
+//       ${miqdor}ta
+//       ${mahsulot} qabul bo'ldi!`,
+//     );
+//   }
+// }
+
+// const shop = new Shop(8, 7, 4);
+// shop.qoldiq();
+// shop.sotish("smart_achki", 20);
+// shop.sotish("telifon", 20);
+// shop.sotish("kampyuter", 25);
+// shop.qabul("kampyuter", 6);
+// shop.qabul("smart_achki", 5);
+// shop.qabul("telifon", 9);
+
+// shop.qoldiq();
+
+/* E-TASK
+
+Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+ MASALAN: getReverse("hello") return qilsin "olleh". */
+
+let text = "goodmorning";
+let reversed = text
+  .split("")
+  .reverse()
+  .join("");
+console.log(reversed);
+
+function getReverse(str) {
+  return str
+    .split("")
+    .reverse()
+    .join("");
 }
-
-const shop = new Shop(8, 7, 4);
-shop.qoldiq();
-shop.sotish("smart_achki", 20);
-shop.sotish("telifon", 20);
-shop.sotish("kampyuter", 25);
-shop.qabul("kampyuter", 6);
-shop.qabul("smart_achki", 5);
-shop.qabul("telifon", 9);
-
-shop.qoldiq();
+console.log(getReverse("안녕하세요"));
