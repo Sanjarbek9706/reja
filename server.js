@@ -5,6 +5,7 @@ let db;
 const connectionString =
   "mongodb+srv://sanjar:sanjar12345@cluster0.eqx2jcf.mongodb.net/Reja";
 
+// TCP = BS + DS
 mongodb.connect(
   connectionString,
   {

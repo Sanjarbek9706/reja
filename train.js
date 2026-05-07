@@ -261,17 +261,37 @@ return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud */
 Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
  MASALAN: getReverse("hello") return qilsin "olleh". */
 
-let text = "goodmorning";
-let reversed = text
-  .split("")
-  .reverse()
-  .join("");
-console.log(reversed);
+// let text = "goodmorning";
+// let reversed = text
+//   .split("")
+//   .reverse()
+//   .join("");
+// console.log(reversed);
 
-function getReverse(str) {
-  return str
-    .split("")
-    .reverse()
-    .join("");
+// function getReverse(str) {
+//   return str
+//     .split("")
+//     .reverse()
+//     .join("");
+// }
+// console.log(getReverse("안녕하세요"));
+
+/* F-TASK
+
+Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, 
+qatnashmasa false qaytarishi kerak. MASALAN: getReverse("hello") return true return qiladi. */
+
+let soz = "hello";
+let harf = "l";
+
+function findDoublers(soz, harf) {
+  if (
+    soz.indexOf(harf) !==
+    soz.lastIndexOf(harf)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
-console.log(getReverse("안녕하세요"));
+console.log(findDoublers(soz, harf));

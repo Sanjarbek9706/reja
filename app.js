@@ -1,14 +1,13 @@
 console.log("Web Serverni boshlash");
 const express = require("express");
-const res = require("express/lib/response");
 const app = express();
 
 //MongoDB chaqirish
 const db = require("./server").db();
-const mongodb = require("mongodb");
+const mongodb = require("mongodb"); //Qalam
 
 //1: Kirish code
-app.use(express.static("public")); //Midleware Decorator
+app.use(express.static("public")); //Midleware Decorator > Public
 app.use(express.json()); //Midleware Decorator, Rest API
 app.use(
   express.urlencoded({

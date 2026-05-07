@@ -1,7 +1,8 @@
 console.log("FrontEnd JS ishga tushdi");
 
 function itemTemplate(item) {
-  return `<li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+  return `<li style="background: green"
+  class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
           <span class=" item-text">${item.reja}</span>
           <div>
             <button data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">O'zgartirish</button>
@@ -20,8 +21,9 @@ document
   .addEventListener(
     "submit",
     function (e) {
+      //Traditional API  toxtadish
       e.preventDefault();
-
+      //frontendan =>BS dan axios orqali rest API bog'laymiz
       axios
         .post("/create-item", {
           reja: createField.value,
@@ -30,9 +32,11 @@ document
           document
             .getElementById("item-list")
             .insertAdjacentHTML(
-              "beforeend",
+              //HTML elementiga yangi kontent qoshadi  saxifani yangilamasdan
+              "beforeend", // listni eng patidan qo'sh
               itemTemplate(
-                response.data,
+                // malumotni chiroyli qilib HTML formatga keltirib beradi
+                response.data, //bu serverdan kelgan malumot
               ),
             );
           createField.value = "";
