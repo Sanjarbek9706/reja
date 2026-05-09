@@ -281,17 +281,38 @@ Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni tes
 Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, 
 qatnashmasa false qaytarishi kerak. MASALAN: getReverse("hello") return true return qiladi. */
 
-let soz = "hello";
-let harf = "l";
+// let soz = "hello";
+// let harf = "l";
 
-function findDoublers(soz, harf) {
-  if (
-    soz.indexOf(harf) !==
-    soz.lastIndexOf(harf)
-  ) {
-    return true;
-  } else {
-    return false;
+// function findDoublers(soz, harf) {
+//   if (
+//     soz.indexOf(harf) !==
+//     soz.lastIndexOf(harf)
+//   ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(findDoublers(soz, harf));
+
+/* G-TASK
+
+Shunday function tuzingki unga integerlardan iborat array pass bolsin va function
+ bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
+ MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini. */
+
+function getHighestIndex(arr) {
+  let max = arr[0];
+  let highesIndex = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+      highestIndex = i;
+    }
   }
+  return highestIndex;
 }
-console.log(findDoublers(soz, harf));
+console.log(
+  getHighestIndex([5, 25, 17, 29, 35]),
+);
