@@ -316,3 +316,6 @@ function getHighestIndex(arr) {
 console.log(
   getHighestIndex([5, 25, 17, 29, 35]),
 );
+
+// reja: loyihasi diploy qilindi!
+http://93.188.166.198:3009/
