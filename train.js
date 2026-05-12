@@ -302,20 +302,39 @@ Shunday function tuzingki unga integerlardan iborat array pass bolsin va functio
  bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
  MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini. */
 
-function getHighestIndex(arr) {
-  let max = arr[0];
-  let highesIndex = 0;
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-      highestIndex = i;
-    }
-  }
-  return highestIndex;
-}
-console.log(
-  getHighestIndex([5, 25, 17, 29, 35]),
-);
+// function getHighestIndex(arr) {
+//   let max = arr[0];
+//   let highesIndex = 0;
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       max = arr[i];
+//       highestIndex = i;
+//     }
+//   }
+//   return highestIndex;
+// }
+// console.log(
+//   getHighestIndex([5, 25, 17, 29, 35]),
+// );
 
 // reja: loyihasi diploy qilindi!
-http://93.188.166.198:3009/
+// http://93.188.166.198:3009/
+
+/*H-TASK
+
+Shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib,
+ faqat positive qiymatlarni olib string holatda return qilsin. MASALAN: getPositive([1, -4, 2]) return qiladi "12". */
+
+function getPositive(arr) {
+  return arr
+    .filter((num) => num > 0)
+    .join("");
+}
+
+console.log(
+  getPositive([2, -5, -6, 6]),
+);
+
+console.log(
+  getPositive([-6, 50, -4, 70]),
+);
