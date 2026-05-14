@@ -325,16 +325,45 @@ Shunday function tuzingki unga integerlardan iborat array pass bolsin va functio
 Shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib,
  faqat positive qiymatlarni olib string holatda return qilsin. MASALAN: getPositive([1, -4, 2]) return qiladi "12". */
 
-function getPositive(arr) {
-  return arr
-    .filter((num) => num > 0)
-    .join("");
+// function getPositive(arr) {
+//   return arr
+//     .filter((num) => num > 0)
+//     .join("");
+// }
+
+// console.log(
+//   getPositive([2, -5, -6, 6]),
+// );
+
+// console.log(
+//   getPositive([-6, 50, -4, 70]),
+// );
+
+/*
+I-TASK
+
+Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin. 
+MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4.  */
+
+function majorityElement(arr) {
+  let counts = new Map();
+  let maxCount = 0;
+  let result = arr[0];
+
+  for (let numbr of arr) {
+    let calculat =
+      (counts.get(numbr) || 0) + 1;
+    counts.set(numbr, calculat);
+
+    if (calculat > maxCount) {
+      maxCount = calculat;
+      result = numbr;
+    }
+  }
+  return result;
 }
 
-console.log(
-  getPositive([2, -5, -6, 6]),
-);
-
-console.log(
-  getPositive([-6, 50, -4, 70]),
-);
+const numbr = [
+  1, 3, 34, 4, 4, 5, 4, 5, 6, 5, 6,
+];
+console.log(majorityElement(numbr));
