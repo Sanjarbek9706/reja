@@ -345,25 +345,49 @@ I-TASK
 Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin. 
 MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4.  */
 
-function majorityElement(arr) {
-  let counts = new Map();
-  let maxCount = 0;
-  let result = arr[0];
+// function majorityElement(arr) {
+//   let counts = new Map();
+//   let maxCount = 0;
+//   let result = arr[0];
 
-  for (let numbr of arr) {
-    let calculat =
-      (counts.get(numbr) || 0) + 1;
-    counts.set(numbr, calculat);
+//   for (let numbr of arr) {
+//     let calculat =
+//       (counts.get(numbr) || 0) + 1;
+//     counts.set(numbr, calculat);
 
-    if (calculat > maxCount) {
-      maxCount = calculat;
-      result = numbr;
+//     if (calculat > maxCount) {
+//       maxCount = calculat;
+//       result = numbr;
+//     }
+//   }
+//   return result;
+// }
+
+// const numbr = [
+//   1, 3, 34, 4, 4, 5, 4, 5, 6, 5, 6,
+// ];
+// console.log(majorityElement(numbr));
+
+/*J-TASK
+
+Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+ MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan" */
+
+function findLongestWord(text) {
+  const words = text.split(" ");
+  let longestWord = words[0];
+
+  for (let word of words) {
+    if (
+      word.length > longestWord.length
+    ) {
+      longestWord = word;
     }
   }
-  return result;
+  console.log(longestWord);
+  return longestWord;
 }
 
-const numbr = [
-  1, 3, 34, 4, 4, 5, 4, 5, 6, 5, 6,
-];
-console.log(majorityElement(numbr));
+findLongestWord(
+  "I come from Uzbekiston",
+);
